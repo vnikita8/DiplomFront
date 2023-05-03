@@ -1,0 +1,36 @@
+.TextBlock{
+    font-size: 22px;
+    line-height: 22px;
+    align-items: center;
+    justify-content: center;
+    font-weight: 400;
+}
+
+.BlockTitle{
+    font-size: 22px;
+    line-height: 26px;
+    align-items: center;
+    font-weight: 600;
+}
+
+.Footer{
+    width: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    background: #2C3E50;
+
+    padding: 30px 10%;
+}
+
+.TextBlock p, .Footer a{
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
+}
+
+hr{
+    border-bottom: 2px white solid;
+    width: auto;
+}

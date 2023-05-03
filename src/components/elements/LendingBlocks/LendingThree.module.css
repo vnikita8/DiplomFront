@@ -1,0 +1,163 @@
+.Upper *{
+    padding: 0;
+    margin: 0;
+}
+
+.Upper{
+    padding: 0 10%;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 40px;
+    background: #ECF0F1;
+    box-shadow: 
+        inset   2px 0px 10px rgba(0, 0, 0, 0.25),
+                10px 0px 2px rgba(0, 0, 0, 0.25);
+}
+
+
+/*   Регион стилей со статистикой   */
+.Statistics{
+    display: flex;
+    flex-direction: column;
+    justify-content:left;
+    align-items: center;
+    padding: 40px 15px;
+    gap: 40px;
+    background: #2C3E50;
+    box-shadow: 2px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Заголовок блока */
+.StatTitleBlock h1{
+    font-weight: 700;
+    font-size: 48px;
+    line-height: 58px;
+}
+
+.StatTitleBlock p{
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 19px;
+}
+
+.StatTitleBlock{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0px;
+    gap: 4px;
+}
+
+/* Сами записи со статистикой */
+.StatBlocks{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0px;
+    gap: 30px;
+}
+
+.StatBlock{
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    align-items: center;
+    padding: 8px 10px;
+    gap: 16px;
+    width: 280px;
+}
+
+.Percent{
+    background-color: #56CDCD;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 8px 0;
+    width: 110px;
+    font-weight: 600;
+    font-size: 28px;
+    line-height: 36px;
+}
+
+.StatBlock p{
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 24px;
+    display: flex;
+    align-items: center;
+}
+
+
+
+/* Регион с "4 шага к бюджету" */
+.StepBlock{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 50px 40px 40px;
+    gap: 75px;
+}
+
+
+.StepBlock h1{
+    font-weight: 700;
+    font-size: 40px;
+    line-height: 48px;
+    color: #2C3E50;
+}
+.StepBlock span{
+    color: #56CDCD;
+}
+.Steps{
+    display: flex;
+    flex-direction: column;
+    align-items:flex-start;
+    gap: 40px;
+    justify-content: left;
+}
+
+.Step p{
+    color:#2C3E50;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 100%;
+}
+.Step div{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    background: #2C3E50;
+    border-radius: 10px; 
+    color:white;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 100%;
+    width: 20px;
+}
+
+
+.Step{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 0px;
+    gap: 16px;
+}
+
+.StepBlock a{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 18px 60px;
+    gap: 10px;  
+    background: #CD5656;
+    box-shadow: 0px 16px 44px -12px rgba(205, 86, 86, 0.35);
+    border-radius: 10px;
+    font-weight: 700;
+    font-size: 22px;
+    line-height: 26px;
+}

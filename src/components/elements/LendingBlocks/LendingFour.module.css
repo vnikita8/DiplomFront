@@ -1,0 +1,56 @@
+.Upper *{
+    margin: 0;
+    padding: 0;
+}
+
+.Upper{
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 140px 10%;
+    justify-content: space-around;
+    background-color: #ECF0F1;
+}
+
+.Block{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.Block h1{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 8px 0px;
+    gap: 10px;
+    font-weight: 700;
+    font-size: 40px;
+    line-height: 48px;
+    max-width: 320px;
+}
+
+.Block p{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 0px;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 29px;
+    max-width: 320px;
+}
+
+.Block *{
+    color: #2C3E50;
+    text-align: center;
+}
+
+.Block hr{
+    border: 1px #2C3E50 solid;
+    width: 90%;
+}

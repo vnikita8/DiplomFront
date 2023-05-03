@@ -1,0 +1,102 @@
+.Upper *{
+    padding: 0;
+    margin: 0;
+    color: #2C3E50;
+}
+
+.Upper{
+    padding: 120px 10%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+    background-color: #ECF0F1;
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.25);
+}
+
+
+.Titles{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0px;
+    gap: 20px;
+}
+
+.Titles p{
+    font-size: 24px;
+    line-height: 29px;
+    align-items: center;
+    text-align: center;
+    font-weight: 400;
+}
+
+.Title{
+    font-size: 40px;
+    line-height: 48px;
+    align-items: center;
+    text-align: center;
+    font-weight: 700;
+}
+
+.FiltersAndButton a{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 15px 60px;
+    gap: 4px;
+    background: #CD5656;
+    box-shadow: 0px 16px 44px -12px rgba(205, 86, 86, 0.35);
+    border-radius: 6px;
+    color:#ECF0F1;
+    font-weight: 700;
+    font-size: 22px;
+    line-height: 26px;
+}
+
+.FiltersAndButton{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0px;
+    gap: 20px;
+}
+
+.Filters{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0px;
+    gap: 10px;
+    
+}
+
+.FilterRow{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items:flex-end;
+    padding: 0px;
+    gap: 20px;
+}
+
+
+.DropDown p, .FilterRow p{
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 19px;
+}
+
+.DropDown p{
+    padding-bottom: 6px;
+}
+
+.DropDown ul{
+    width: 180px;
+    height: 40px;
+    background: #FFFFFF;
+    border: 1px solid #ECF0F1;
+    box-shadow: inset 0px 2px 0px rgba(231, 235, 238, 0.2);
+    border-radius: 6px;
+}
