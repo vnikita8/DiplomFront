@@ -1,6 +1,7 @@
 import React from 'react'
 import styles from './Footer.module.css'
 import {Link} from 'react-router-dom';
+import links from '../../../services/links';
 
 const Footer = () => {
   return (
@@ -9,10 +10,10 @@ const Footer = () => {
           <p className={styles.BlockTitle}>Полезные ссылки</p>
           <hr />
           <div>
-            <Link to="/">Главная страница</Link>
-            <p>Вакантные места</p>
-            <p>Регистрация</p>
-            <p>Личный кабинет</p>
+            <Link to={links.Home}>Главная страница</Link>
+            <Link to={links.Places}>Вакантные места</Link>
+            <Link to={links.Auth}>Авторизация</Link>
+            <Link to={links.Reg1}>Регистрация</Link>
           </div>
         </div>
         

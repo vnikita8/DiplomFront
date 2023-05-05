@@ -5,7 +5,6 @@ import LendingFour from '../elements/LendingBlocks/LendingFour'
 import LendingOne from '../elements/LendingBlocks/LendingOne'
 import LendingThree from '../elements/LendingBlocks/LendingThree'
 import LendingTwo from '../elements/LendingBlocks/LendingTwo'
-import styles from './Home.module.css'
 
 const Home = () => {
     return (

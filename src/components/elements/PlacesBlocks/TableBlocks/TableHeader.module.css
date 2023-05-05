@@ -1,0 +1,50 @@
+.Upper{
+    display: flex;
+    flex-direction: column;
+}
+
+.Upper *{
+    margin: 0;
+    padding: 0;
+}
+
+.HeaderItem p{
+    color: #808080;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 22px;
+    width: 100%;
+    text-align: center;     
+}
+
+.RowOne p{
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 26px;
+    width: 100%;
+    text-align: center; 
+    color:#333333;
+}
+
+.RowTwo p{
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 26px;
+    width: 100%;
+    text-align: center; 
+    color:#333333;
+}
+
+.RowTwo{
+    background-color: #ECF0F1;
+}
+
+.Upper{
+    border-collapse: separate;
+    border-spacing: 0 6px;
+    
+}
+
+.Line{
+    border-bottom: 1px solid #51515168 ;
+}

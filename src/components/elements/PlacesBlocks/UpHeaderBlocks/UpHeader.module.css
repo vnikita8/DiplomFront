@@ -1,0 +1,50 @@
+.Upper *{
+    padding: 0;
+    margin: 0;
+}
+
+.Upper {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center; 
+}
+
+.Right *{
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 22px;
+    color:black;
+}
+
+.FilterGroup{
+    display:flex;
+    flex-direction: row;
+    gap: 40px;
+
+}
+
+.FilterGroup button{
+    display:flex;
+    flex-direction: row;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 22px;
+
+}
+
+.Search{
+    background-image: url('/Search.svg');
+    background-repeat: no-repeat;
+    background-position: 10px center;
+    padding-left: 40px;
+    background-color: white;
+    border: 1px solid #CCCCCC;
+    border-radius: 8px;
+    width: 560px;
+    height: 42px;
+    color:black;
+}

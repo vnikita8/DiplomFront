@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import links from '../../../services/links'
 import styles from './LendingThree.module.css'
 
 const LendingThree = () => {
@@ -57,7 +58,7 @@ const Steps = () => {
             {steps.map(step=> <Step key={step.value} number={step.value} text={step.text} />)} 
             
             </div>
-            <Link to="/">Вакантные места</Link>
+            <Link to={links.Places}>Вакантные места</Link>
         </div>
     )
 }

@@ -6,10 +6,11 @@
     align-items: center;
     padding: 80px 10%;
     gap: 10px;
+    max-width: 100%;
 }
 
 .HeadBlock *{
-    font-size: 60px;
+    font-size: 50px;
     line-height: 72px;
     margin: 0;
     width: auto;
@@ -48,12 +49,12 @@
     align-items: flex-start;
     padding: 0px;
     gap: 40px;
-    min-width: 410px;
     width: 60%;
 }
 
 .Image{
     max-height: 500px;
+    width: 100%;
 }
 
 .Right{

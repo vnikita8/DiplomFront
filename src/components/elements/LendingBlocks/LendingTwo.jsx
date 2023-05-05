@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
+import links from '../../../services/links';
 import styles from './LendingTwo.module.css'
 
 class Item {
@@ -29,7 +30,7 @@ const LendingTwo = () => {
                 <DropDown title="Форма обучения" items={[]} />
               </div>
           </div>
-          <Link to="/">Найти место</Link>
+          <Link to={links.Places}>Найти место</Link>
         </div>
     </div>
   )

@@ -12,7 +12,7 @@
 }
 
 .Left{
-    width: 50%;
+    width: 75%;
     background-color: #2C3E50;
     clip-path: polygon(  0% 0%,   100% 0%,   80% 100%,  0% 100%  );
     display: flex;
@@ -22,23 +22,34 @@
     
 }
 .Right{
-    width: 50%;
+    width: 25%;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    gap:10%;
+    gap:20%;
 }
 
 .HeaderLeft{
-    font-size: 40px;
-    font-weight: 700;
-    font-style: normal;
-    line-height: 48px;
-    padding-left: 19.8%;
+    padding-left: 13.2%;
+    padding-right: 5.5%;
     height: 120px;
     display: flex;
     flex-direction: row;
     align-items: center;
+    justify-content: space-between;
+}
+
+.Logo{
+    font-size: 40px;
+    font-weight: 700;
+    font-style: normal;
+    line-height: 48px;
+}
+
+.LeftButton {
+    font-size: 22px;
+    line-height: 29px;
+    font-weight: 700;
 }
 
 
@@ -48,9 +59,11 @@
     justify-content: right;
     align-items: center;
     gap: 15%;
-    padding-right: 20%;
+    color:#2C3E50;
+    padding-right: 40%;
     height: 120px;
 }
+
 .HeaderRight a{
     color:#2C3E50;
     font-size: 22px;
@@ -58,78 +71,81 @@
     font-weight: 700;
 }
 
+
 .MainLeft{
-    padding-left: 20%;
     display: flex;
     flex-direction: column;
-    gap: 30px;
+    gap: 40px;
+    align-items: center;
 }
 
-.MainLeft a{
+.LeftTitles{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+    max-width: 40%;
+}
+
+.LeftTitles h1{
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 40px;
+}
+
+.LeftTitles p{
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 24px;
+}
+
+.MainLeft form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.MainLeft form input{
+    box-sizing: border-box;
+    display: flex;
+    padding: 14px 160px 14px 20px;
+    background-color: #ECF0F1;
+    border: 1px solid rgba(0,0,0,0.5);
+    border-radius: 10px;
+    color:#2C3E50;
+}
+
+.ButtonLink{
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
     padding: 10px 20px;
     margin-left: 0%;
-    width: 50%;
+    width: 90%;
     gap: 10px;
     background: #CD5656;
     box-shadow: 0px 16px 44px -12px rgba(205, 86, 86, 0.35);
     border-radius: 10px;
-    font-weight: 600;
+    font-weight: 500;
     font-size: 20px;
     line-height: 26px;
 }
 
-.MainLeft *{
-    max-width: 70%;
-}
-
-.MainLeft h1{
-    line-height: 48px;
-    font-weight: 600;
-    font-size: 36px;
-}
-
-.MainLeft p{
-    line-height: 28px;
-    font-weight: 400;
-    font-size: 22px;
-}
-
-.MainRight {
+.Buttons{
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 40px;
+    gap: 8px;
     width: 100%;
-}
-
-.MainRight form{
-    display: flex;
-    flex-direction: column;
     align-items: center;
-    padding: 0px;
-    gap: 10px;
-    width:fit-content;
 }
 
-.MainRight form input{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    padding: 12px 150px 12px 20px;
-    gap: 10px;
-    background: #ECF0F1;
-    border: 1px solid rgba(0, 0, 0, 0.5);
-    border-radius: 10px;
-    color: black;
-}
-
-.MainRight *{
-    color: #2C3E50;
+.GrayButtonLink{
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 20px;
+    color: rgba(201, 199, 199, 0.8);
 }
 
 .MainRight a{
@@ -137,21 +153,14 @@
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    padding: 10px 80px;
+    padding: 10px 10px;
+    width: 40%;
+    margin-left: 0%;
     gap: 10px;
     background: #2C3E50;
     box-shadow: 0px 16px 44px -12px rgba(205, 86, 86, 0.35);
     border-radius: 10px;
-    font-weight: 600;
+    font-weight: 500;
     font-size: 20px;
     line-height: 26px;
-    color: #ECF0F1;
-}
-.MainRight p{
-    font-weight: 300;
-    font-size: 16px;
-    line-height: 19px;
-    width: 100%;
-    display: flex;
-    flex-direction: row-reverse;
 }
