@@ -1,11 +1,23 @@
 .Upper{
     display: flex;
     flex-direction: column;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    border-collapse: separate;
+    border-spacing: 0 8px;
 }
 
 .Upper *{
     margin: 0;
     padding: 0;
+}
+
+.Header{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    width: 100%;
 }
 
 .HeaderItem p{
@@ -21,29 +33,31 @@
     font-weight: 400;
     font-size: 16px;
     line-height: 26px;
-    width: 100%;
     text-align: center; 
     color:#333333;
+    margin: 2px 4px;
 }
 
 .RowTwo p{
     font-weight: 400;
     font-size: 16px;
     line-height: 26px;
-    width: 100%;
     text-align: center; 
     color:#333333;
+    margin: 2px 2px;
 }
 
 .RowTwo{
     background-color: #ECF0F1;
 }
 
-.Upper{
-    border-collapse: separate;
-    border-spacing: 0 6px;
-    
+.TableRow{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    width: 100%;
 }
+
 
 .Line{
     border-bottom: 1px solid #51515168 ;

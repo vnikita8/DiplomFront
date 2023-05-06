@@ -8,15 +8,15 @@ const TableHeader = () => {
 
     <table className={styles.Upper}>
         <thead>
-            <tr>
-                {tableHeaders.map(item => <TableItem style={styles.HeaderItem} id={item.id} text={item.text} width={item.maxWidth} />)}
+            <tr className={styles.Header}>
+                {tableHeaders.map(item => <TableItem key={item.id} style={styles.HeaderItem} id={item.id} text={item.text} width={item.maxWidth} />)}
             </tr>
         </thead>
         <tbody>
             {elementsMok.map( item => 
                 <>
-                    <TableRow id={item.id} text={item} style={item.id%2 == 0? styles.RowOne: styles.RowTwo} />
-                    <hr className={styles.Line}></hr>
+                    <TableRow className={styles.TableRow} key={item.id} id={item.id} text={item} style={item.id%2 == 0? styles.RowOne: styles.RowTwo} />
+                    {/* <hr className={styles.Line}></hr> */}
                 </>
                 )}
             </tbody>
@@ -51,28 +51,28 @@ const TableRow = ({text, style}) => {
 export default TableHeader
 
 
-
-const tableHeaders = [
-    {id: 0, text: "Направленность", maxWidth: 154},
-    {id: 1, text: "Специальность", maxWidth: 170},
-    {id: 2, text: "Год набора", maxWidth: 164},
-    {id: 3, text: "Уровень образования", maxWidth: 160},
-    {id: 4, text: "Курс", maxWidth: 80},
-    {id: 5, text: "Форма обучения", maxWidth: 170},
-    {id: 6, text: "Свободных мест", maxWidth: 150},
-    {id: 7, text: "Потенциальных мест", maxWidth: 174},
-]
-
 const tableWidth = {
-    first: 154,
-    second: 170,
+    first: 200,
+    second: 200,
     third: 164,
-    four: 160,
+    four: 170,
     five: 80,
     six: 170,
     seven: 150,
     eight: 174
 }
+
+const tableHeaders = [
+    {id: 0, text: "Направленность", maxWidth: tableWidth.first},
+    {id: 1, text: "Специальность", maxWidth: tableWidth.second},
+    {id: 2, text: "Год набора", maxWidth: tableWidth.third},
+    {id: 3, text: "Уровень образования", maxWidth: tableWidth.four},
+    {id: 4, text: "Курс", maxWidth: tableWidth.five},
+    {id: 5, text: "Форма обучения", maxWidth: tableWidth.six},
+    {id: 6, text: "Свободных мест", maxWidth: tableWidth.seven},
+    {id: 7, text: "Потенциальных мест", maxWidth: tableWidth.eight},
+]
+
 
 const elementsMok = [
     {
