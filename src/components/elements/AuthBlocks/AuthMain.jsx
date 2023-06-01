@@ -28,7 +28,7 @@ const AuthMain = () => {
                 <input placeholder='Пароль'></input>
                 <p>Забыли пароль?</p>
             </form>
-            <Link to={links.Places}>Войти</Link>
+            <Link onClick={getData}>Войти</Link>
         </div>
         </div>
 
@@ -36,5 +36,109 @@ const AuthMain = () => {
     </div>
   )
 }
+
+async function getData2(){
+
+    const url = 'https://transfer.kemsu.ru/api/v1/sign_up/student/';
+
+    const user = {
+        "first_name": "Default",
+        "middle_name": "Default",
+        "last_name": "Default",
+        "phone": "8-150-555-35-35",
+        "email": "qqqqqqdefault@mail.com",
+        "password": "qqqqqq123456"
+    };
+
+    const options = {
+        method: 'POST',
+        mode: "cors",
+        headers: {
+            "accept": "application/json",
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify(user)
+    };
+
+    let answer = new CustomResp();
+    
+    const response = fetch(url, options)
+                    .then((response) => {
+                        answer.setCode(response.status);
+                        return response.json()
+                    })
+                    .then((data) => { 
+                        answer.setData(data);
+                    })
+
+                    .catch();
+
+    console.log(answer)
+
+}
+
+async function getData(){
+
+    const url = 'https://transfer.kemsu.ru/api/v1/sign_up/student/';
+
+    const user = {
+        "first_name": "Default",
+        "middle_name": "Default",
+        "last_name": "Default",
+        "phone": "8-150-555-35-35",
+        "email": "qqqqqqdefault@mail.com",
+        "password": "qqqqqq123456"
+    };
+
+    const options = {
+        method: 'POST',
+        mode: "cors",
+        headers: {
+            "accept": "application/json",
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify(user)
+    };
+
+    let answer = new CustomResp();
+    
+    const response = fetch(url, options)
+                    .then((response) => {
+                        answer.setCode(response.status);
+                        return response.json()
+                    })
+                    .then((data) => { 
+                        answer.setData(data);
+                    })
+
+                    .catch();
+
+    console.log(answer)
+
+}
+
+class CustomResp{
+    constructor(inData, inCode){
+        this.Data = inData;
+        this.Code = inCode;
+    }
+
+    setCode(inCode) {
+        this.Code = inCode;
+    }
+
+    setData(inData) {
+        if(typeof inData == "boolean"){
+            this.Data = "Пользователь успешно добавлен";
+            this.isBool = inData;
+        }
+        else {
+            this.Data = inData;
+            this.isBool = false;
+        }
+            
+    }
+}
+
 
 export default AuthMain

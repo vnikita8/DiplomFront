@@ -1,6 +1,7 @@
 import React from 'react'
 import styles from "./LendingOne.module.css"
 
+
 const LendingOne = () => {
   return (
     <div className={styles.Upper}>
@@ -11,7 +12,7 @@ const LendingOne = () => {
             </div>
             <p className={styles.TextBlock}>Сервис даёт возможность найти свободное место на бюджет. 
                 <br />Не жди, начни планировать свое будущее уже сейчас!</p>
-            <button className={styles.Button}>Перевестись!</button>
+            <button className={styles.Button} onClick={test}>Перевестись!</button>
         </div>
 
         <div className={styles.Right}>
@@ -20,5 +21,13 @@ const LendingOne = () => {
     </div>
   )
 }
+
+
+function test(){
+    value = React.useContext(UserContext)
+    console.log(value)
+}
+
+
 
 export default LendingOne

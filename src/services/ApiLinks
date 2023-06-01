@@ -1,0 +1,34 @@
+
+const url = "https://transfer.kemsu.ru/api/v1/";
+
+const apiLinks = {
+    SignIn : {
+        Student: {URL: url + "sign_in/student/", method: "POST"},
+        Staff: {URL: url + "sign_in/staff/", method: "POST"}
+    },
+    SignUp : {
+        Student: {URL: url + "sign_up/student/", method: "POST"},
+        Staff: {URL: url + "sign_up/staff/", method: "POST"}
+    },
+    GroupsDo : {
+        GetOne: {URL: url + "group/", method: "GET"},
+        GetAll: {URL: url + "groups/", method: "GET"},
+        AddGroup: {URL: url + "group/create/", method: "POST"},
+        DelGroup: {URL: url + "group/delete/", method: "DELETE"},
+        AddPlan: {URL: url + "group/add/plan/", method: "POST"},
+        UpdateGroup: {URL: url + "group/path/", method: "PATCH"}
+    },
+    Disciplines : {
+        Add: {URL: url + "discipline/create", method: "POST"},
+        GetOne: {URL: url + "discipline/", method: "GET"},
+        GetAll: {URL: url + "disciplines/", method: "GET"},
+        DelOne: {URL: url + "discipline/delete/", method: "DELETE"}
+    },
+    OOP : {
+        oop: {URL: url + "oop/", method: "GET"},
+        oopList: {URL: url + "oop/list/", method: "GET"},
+        AddOop: {URL: url + "oop/create/", method: "POST"},
+        UpdateOop: {URL: url + "oop/path", method: "PATCH"},
+        DelOop: {URL: url + "oop/delete", method: "DELETE"}
+    }
+}

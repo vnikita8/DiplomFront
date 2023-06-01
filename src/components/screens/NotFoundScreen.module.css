@@ -1,0 +1,12 @@
+.Upper{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    height: 100vh;
+}
+h2{
+    color: #2C3E50;
+    width: 100%;
+    text-align: center;
+    
+}
