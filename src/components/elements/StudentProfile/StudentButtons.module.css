@@ -1,0 +1,28 @@
+.Button, .ButtonSelected{
+    font-family: 'Exo 2';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 29px;
+
+    /* identical to box height */
+    display: flex;
+    align-items: center;
+
+    /* Blue Dark */
+    color: #2C3E50;
+}
+
+.ButtonGroup{
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 0px;
+    gap: 40px;
+    width: 100%;
+}
+
+.Button:hover, .ButtonSelected{
+    color: #56CDCD;
+}
+

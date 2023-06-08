@@ -1,0 +1,16 @@
+body{
+    background: #ECF0F1;
+    align-items: center;
+}
+
+.ProfileBlocks {
+    display: flex;
+    flex-direction: column;
+    padding-left: 10%;
+    padding-right: 10%;
+    align-items: center;
+    gap: 40px;
+    margin: 40px 0;
+}
+
+

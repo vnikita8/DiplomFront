@@ -9,7 +9,7 @@ const NotFoundScreen = () => {
   return (
     <div className={styles.Upper}>
         <Header />
-        <h2>404 - Страница не найдена</h2>
+        <h2>Страница не найдена</h2>
         <Footer />
     </div>
   )

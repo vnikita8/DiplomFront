@@ -1,0 +1,13 @@
+.EmailText{
+    font-family: 'Exo 2';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 40px;
+    line-height: 48px;
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+
+    color: #2C3E50;
+}

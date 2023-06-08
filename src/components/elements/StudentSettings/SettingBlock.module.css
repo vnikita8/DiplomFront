@@ -1,0 +1,108 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.AllBlock{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 60px;
+    gap: 40px;
+    background: #FFFFFF;
+    box-shadow: 0px 12px 33px -6px rgba(0, 0, 0, 0.15);
+    border-radius: 10px;
+    width: 100%;
+}
+
+.RowBlock{
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 0px;
+    gap: 60px;
+}
+.RowBlock h3{
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 29px;
+    /* identical to box height */
+
+    display: flex;
+    align-items: center;
+
+    color: #000000;
+    width: 300px;
+}
+
+
+
+.Inputs{
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 40px 0px 0px;
+    gap: 30px;    
+}
+
+.Input{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0px;
+    gap: 10px;
+}
+
+.Input input{
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 10px;
+    background: #FFFFFF;
+    border: 1px solid #000000;
+    border-radius: 10px;
+    height: 40px;
+}
+
+.Input p{
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 26px;
+    /* identical to box height */
+    display: flex;
+    align-items: center;
+
+    color: rgba(44, 44, 44, 0.8);
+}
+
+
+.ButtonFrame{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 0px;
+    gap: 10px;
+    height: 60px;
+}
+
+.SaveButton{
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 10px 60px;
+    gap: 40px;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 29px;
+
+    /* ZimaBlue */
+
+    background: #56CDCD;
+    border-radius: 10px;
+
+}

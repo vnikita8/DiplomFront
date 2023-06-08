@@ -32,3 +32,5 @@ const apiLinks = {
         DelOop: {URL: url + "oop/delete", method: "DELETE"}
     }
 }
+
+export default apiLinks;

@@ -3,8 +3,11 @@ const links = {
     Auth: "/Auth",
     Reg1: "/Reg/1",
     Reg2: "/Reg/2",
-    Places: "/Places"
-
+    Places: "/Places",
+    StudentProfile: "/Profile",
+    StudentFavorites: "/Profile/Favorites",
+    StudentSettings: "/Profile/Settings",
+    StaffStudents: "/Profile/Students"
 }
 
 export default links;

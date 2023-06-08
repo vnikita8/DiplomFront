@@ -22,3 +22,15 @@ a{
 	border: none; 
     color: #ECF0F1;
 }
+
+
+#SecondName, #FirstName, #ThirdName, #Vuz, #City, #Phone{
+    width: 250px;
+}
+
+#Email{
+    width: 430px;
+}
+#Telega{
+    width: 300px;
+}

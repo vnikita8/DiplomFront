@@ -1,9 +1,13 @@
 import React from 'react'
+import CustomResp from '../../../../services/CustomResponse'
 import styles from './TableHeader.module.css'
-
-
+import apiLinks from '../../../../services/ApiLinks'
 
 const TableHeader = () => {
+    let {foo} = getGroups().then(result => result.data)
+    console.log(foo);
+    
+    
   return (
 
     <table className={styles.Upper}>
@@ -13,13 +17,8 @@ const TableHeader = () => {
             </tr>
         </thead>
         <tbody>
-            {elementsMok.map( item => 
-                <>
-                    <TableRow className={styles.TableRow} key={item.id} id={item.id} text={item} style={item.id%2 == 0? styles.RowOne: styles.RowTwo} />
-                    {/* <hr className={styles.Line}></hr> */}
-                </>
-                )}
-            </tbody>
+           {}
+        </tbody>
         
     </table>   
   )
@@ -34,22 +33,37 @@ const TableItem = ({text, width, style}) => {
 }
 
 const TableRow = ({text, style}) => {
+
     return(
         <tr>
-            <TableItem text={text.napravl} width={tableWidth.first} style={style} />
-            <TableItem text={text.special} width={tableWidth.second} style={style} />
-            <TableItem text={text.year} width={tableWidth.third} style={style} />
-            <TableItem text={text.level} width={tableWidth.four} style={style} />
+            <TableItem text={text.name} width={tableWidth.first} style={style} />
+            <TableItem text={text.speciality} width={tableWidth.second} style={style} />
+            <TableItem text={text.startYear} width={tableWidth.third} style={style} />
+            <TableItem text={text.eduLevel} width={tableWidth.four} style={style} />
             <TableItem text={text.course} width={tableWidth.five} style={style} />
             <TableItem text={text.form} width={tableWidth.six} style={style} />
-            <TableItem text={text.free} width={tableWidth.seven} style={style} />
-            <TableItem text={text.potencial} width={tableWidth.eight} style={style} />
+            <TableItem text={text.available} width={tableWidth.seven} style={style} />
+            <TableItem text={text.potentional} width={tableWidth.eight} style={style} />
         </tr>
     )
 }
 
 export default TableHeader
 
+class RowValue{
+    id; name; speciality; startYear; eduLevel; course; form; available; potentional;
+    constructor(id, name, speciality, startYear, eduLevel, course, form, available, potentional){
+        this.id = id; 
+        this.name = name; 
+        this.speciality = speciality; 
+        this.startYear = startYear; 
+        this.eduLevel = eduLevel; 
+        this.course = course; 
+        this.form = form; 
+        this.available = available; 
+        this.potentional = potentional;
+    }
+}
 
 const tableWidth = {
     first: 200,
@@ -74,23 +88,38 @@ const tableHeaders = [
 ]
 
 
-const elementsMok = [
-    {
-        id:0, 
-        napravl: "Прикладная информатика в экономике", 
-        special:"Прикладная информатика", 
-        year:"2021", 
-        level:"Бакалавриат",
-        course:"3",
-        form:"Очная",
-        free:"5",
-        potencial:"8"
-    },
-    {id:1, napravl: "Прикладная информатика в экономике", special:"Прикладная информатика", year:"2021", level:"Бакалавриат",course:"3",form:"Очная",free:"5",potencial:"8"},
-    {id:2, napravl: "Прикладная информатика в экономике", special:"Прикладная информатика", year:"2021", level:"Бакалавриат",course:"3",form:"Очная",free:"5",potencial:"8"},
-    {id:3, napravl: "Прикладная информатика в экономике", special:"Прикладная информатика", year:"2021", level:"Бакалавриат",course:"3",form:"Очная",free:"5",potencial:"8"},
-    {id:4, napravl: "Прикладная информатика в экономике", special:"Прикладная информатика", year:"2021", level:"Бакалавриат",course:"3",form:"Очная",free:"5",potencial:"8"},
-    {id:5, napravl: "Прикладная информатика в экономике", special:"Прикладная информатика", year:"2021", level:"Бакалавриат",course:"3",form:"Очная",free:"5",potencial:"8"},
-    {id:6, napravl: "Прикладная информатика в экономике", special:"Прикладная информатика", year:"2021", level:"Бакалавриат",course:"3",form:"Очная",free:"5",potencial:"8"},
-    {id:7, napravl: "Прикладная информатика в экономике", special:"Прикладная информатика", year:"2021", level:"Бакалавриат",course:"3",form:"Очная",free:"5",potencial:"8"},
-]
+async function getGroups(){
+    let json = [];
+    try{
+        const url = "https://transfer.kemsu.ru/api/v1/groups/";
+
+        const options = {
+            method: "GET",
+            mode: "cors",
+            headers: {
+                "accept": "application/json",
+                "Content-Type": "application/json"
+            }
+        } 
+            
+    
+        let response = await fetch(url, options);
+        
+
+        if (response.ok){
+            json = await response.json();
+        } else {
+            console.log("Ошибка получения:", response.status);
+        }
+        // let result = json.map((element) => <TableRow text={element} style={styles.RowOne} />);
+
+    } catch (err){
+        console.log(err)
+    }
+    
+    return  await json; 
+}
+
+
+
+
