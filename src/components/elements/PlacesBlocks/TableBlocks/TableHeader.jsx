@@ -1,11 +1,53 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import CustomResp from '../../../../services/CustomResponse'
 import styles from './TableHeader.module.css'
 import apiLinks from '../../../../services/ApiLinks'
 
 const TableHeader = () => {
-    let {foo} = getGroups().then(result => result.data)
-    console.log(foo);
+    const [data, setdata] = useState([]);
+
+    const fetchData = async () => {
+        try{
+            const url = "https://transfer.kemsu.ru/api/v1/groups/";
+            const options = {
+                method: "GET",
+                mode: "cors",
+                headers: {
+                    "accept": "application/json",
+                    "Content-Type": "application/json"
+            }} 
+
+            const response = await fetch(url, options);
+            const json_data = await response.json();
+            let resultRows = []
+
+
+            for (let i = 0; i<json_data.length; i++){
+                try{
+                    resultRows.push(new RowValue(   id, 
+                                                    item.name, 
+                                                    item.shedule_plan.oop.code, 
+                                                    item.shedule_plan.recruitment_year, 
+                                                    item.shedule_plan.oop.education_level,
+                                                    item.course,
+                                                    item.shedule_plan.form,
+                                                    item.available_places,
+                                                    item.potential_places));
+                } catch{
+                    continue;
+                }
+            }
+            setdata(resultRows);
+            
+        } catch(err) {
+            console.log("Error:", err.message);
+        }
+        
+    };
+
+    useEffect(() => {
+        fetchData();
+    }, []);
     
     
   return (
@@ -17,7 +59,7 @@ const TableHeader = () => {
             </tr>
         </thead>
         <tbody>
-           {}
+           {console.log(data)}
         </tbody>
         
     </table>   
