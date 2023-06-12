@@ -20,21 +20,33 @@ const TableHeader = () => {
             const response = await fetch(url, options);
             const json_data = await response.json();
             let resultRows = []
+            console.log(json_data)
+            let id = 0
 
 
             for (let i = 0; i<json_data.length; i++){
                 try{
-                    resultRows.push(new RowValue(   id, 
-                                                    item.name, 
-                                                    item.shedule_plan.oop.code, 
-                                                    item.shedule_plan.recruitment_year, 
-                                                    item.shedule_plan.oop.education_level,
-                                                    item.course,
-                                                    item.shedule_plan.form,
-                                                    item.available_places,
-                                                    item.potential_places));
-                } catch{
-                    continue;
+                    resultRows.push(new RowValue(   id++, 
+                                                    json_data[i].name, 
+                                                    json_data[i].shedule_plan.oop.code ?? "", 
+                                                    json_data[i].shedule_plan.recruitment_year ?? "", 
+                                                    json_data[i].shedule_plan.oop.education_level ?? "",
+                                                    json_data[i].course ?? "",
+                                                    json_data[i].shedule_plan.form ?? "",
+                                                    json_data[i].available_places ?? "",
+                                                    json_data[i].potential_places ?? ""));
+                    // Для теста
+                    // resultRows.push(new RowValue(   id++, 
+                    //     json_data[i].name, 
+                    //     "Код", 
+                    //     "Год", 
+                    //     "Уровень",
+                    //     "Курс",
+                    //     "Форма",
+                    //     "Св",
+                    //     "Пот"));
+                } catch (err){
+                    console.log(err.message);
                 }
             }
             setdata(resultRows);
@@ -59,7 +71,7 @@ const TableHeader = () => {
             </tr>
         </thead>
         <tbody>
-           {console.log(data)}
+           <>{data.map(element => <TableRow text={element} style={styles.RowOne} />)}</>
         </tbody>
         
     </table>   
@@ -119,7 +131,7 @@ const tableWidth = {
 }
 
 const tableHeaders = [
-    {id: 0, text: "Направленность", maxWidth: tableWidth.first},
+    {id: 0, text: "Группа", maxWidth: tableWidth.first},
     {id: 1, text: "Специальность", maxWidth: tableWidth.second},
     {id: 2, text: "Год набора", maxWidth: tableWidth.third},
     {id: 3, text: "Уровень образования", maxWidth: tableWidth.four},
@@ -128,39 +140,6 @@ const tableHeaders = [
     {id: 6, text: "Свободных мест", maxWidth: tableWidth.seven},
     {id: 7, text: "Потенциальных мест", maxWidth: tableWidth.eight},
 ]
-
-
-async function getGroups(){
-    let json = [];
-    try{
-        const url = "https://transfer.kemsu.ru/api/v1/groups/";
-
-        const options = {
-            method: "GET",
-            mode: "cors",
-            headers: {
-                "accept": "application/json",
-                "Content-Type": "application/json"
-            }
-        } 
-            
-    
-        let response = await fetch(url, options);
-        
-
-        if (response.ok){
-            json = await response.json();
-        } else {
-            console.log("Ошибка получения:", response.status);
-        }
-        // let result = json.map((element) => <TableRow text={element} style={styles.RowOne} />);
-
-    } catch (err){
-        console.log(err)
-    }
-    
-    return  await json; 
-}
 
 
 

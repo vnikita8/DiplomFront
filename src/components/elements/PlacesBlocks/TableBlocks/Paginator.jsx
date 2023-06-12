@@ -5,7 +5,7 @@ const Paginator = () => {
   return (
     <div className={styles.Upper}>
         <div className={styles.Left}>
-            <p>Показано 0 из 0 записей</p>
+            <p></p>
         </div>
 
         <div className={styles.Right}>

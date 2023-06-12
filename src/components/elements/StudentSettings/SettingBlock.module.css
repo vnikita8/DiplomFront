@@ -63,6 +63,16 @@
     border: 1px solid #000000;
     border-radius: 10px;
     height: 40px;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 26px;
+    /* identical to box height */
+    display: flex;
+    align-items: center;
+    padding-left: 8px;
+    color: rgba(44, 44, 44, 0.8);
+    
 }
 
 .Input p{

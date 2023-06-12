@@ -8,8 +8,11 @@ const Table = () => {
   return (
     <div className={styles.Upper}>
       <UpHeader />
-      <TableHeader />
-      <Paginator />
+      <div className={styles.Table}>
+        <TableHeader />
+        <Paginator />
+      </div>
+      
     </div>
   )
 }

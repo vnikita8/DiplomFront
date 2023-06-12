@@ -113,9 +113,10 @@
     background-color: #ECF0F1;
     border: 1px solid rgba(0,0,0,0.5);
     border-radius: 10px;
+    color: black;
 }
 
-.MainLeft a{
+.MainLeft button{
     display: flex;
     flex-direction: row;
     justify-content: center;

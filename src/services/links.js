@@ -7,7 +7,8 @@ const links = {
     StudentProfile: "/Profile",
     StudentFavorites: "/Profile/Favorites",
     StudentSettings: "/Profile/Settings",
-    StaffStudents: "/Profile/Students"
+    StaffStudents: "/Profile/Students",
+    NotFound: "*"
 }
 
 export default links;

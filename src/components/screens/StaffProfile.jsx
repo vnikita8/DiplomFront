@@ -5,7 +5,20 @@ import StaffMenu from '../elements/StaffProfile/StaffMenu'
 import StaffProfileMain from '../elements/StaffProfile/StaffProfileMain'
 import styles from './StaffProfile.module.css'
 
+import { useEffect } from 'react'
+import { useNavigate } from 'react-router-dom'
+import {useDispatch, useSelector} from "react-redux";
+
+
 const StaffProfile = () => {
+
+  const isAuth = useSelector(state => state.isAuth);
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    if (!isAuth) {navigate(links.NotFound)}
+  }, []);
+
   return (
     <div>
         <Header />

@@ -1,9 +1,20 @@
-import React from 'react'
+import React, {useState, useEffect} from 'react'
 import styles from './AuthMain.module.css'
-import {Link} from 'react-router-dom';
+import {Link, redirect, useNavigate} from 'react-router-dom';
 import links from '../../../services/links';
+import {useDispatch, useSelector} from "react-redux";
 
 const AuthMain = () => {
+    const navigate = useNavigate();
+    const dispatch = useDispatch();
+
+    
+
+    const [login, setLogin] = useState("")
+    const [password, setPassword] = useState("")
+    const [code, setCode] = useState(500);
+    const [data, setdata] = useState([]);
+
   return (
     <div className={styles.Upper}>
         <div className={styles.Left}>
@@ -24,11 +35,54 @@ const AuthMain = () => {
             <div className={styles.MainRight}>
             <h1>Добро пожаловать</h1>
             <form>
-                <input placeholder='Почта'></input>
-                <input placeholder='Пароль'></input>
+                <input placeholder='Почта' type="text" value={login} onChange={ event => setLogin(event.target.value)}></input>
+                <input placeholder='Пароль' type="text" value={password} onChange={ event => setPassword(event.target.value) }></input>
                 <p>Забыли пароль?</p>
             </form>
-            <Link onClick={getData}>Войти</Link>
+            <Link onClick={ async () => {
+                // to={links.StudentProfile} 
+                //Логика получения ответа от сервера
+                try{
+                    const url = 'https://transfer.kemsu.ru/api/v1/sign_in/student/';
+
+                    const user = {
+                        "email": login,
+                        "password": password
+                    };
+                
+                    const options = {
+                        method: 'POST',
+                        mode: "cors",
+                        headers: {
+                            "accept": "application/json",
+                            'content-Type': 'application/json'
+                        },
+                        body: JSON.stringify(user)
+                    };
+                
+                    
+                    const response = await fetch(url, options)
+                                            .then((response) => {
+                                                setCode(response.status);
+                                                return response.json();
+                                            })
+                                            .then( (data) => setdata(data))
+                    
+
+                    if(code == 200){
+                        dispatch({type:"LOG_IN"})
+                        dispatch({type:"SET_MAIL", mail: data.email})
+                        navigate(links.StudentProfile)
+                    } else {
+                        // alert("Неправильный логин или пароль")
+                    }
+
+                } catch(err) {
+                    console.log("Error:", err.message)
+                }
+
+            }}
+            >Войти</Link>
         </div>
         </div>
 
@@ -37,17 +91,13 @@ const AuthMain = () => {
   )
 }
 
-async function getData2(){
+function getData2(login, password){
 
-    const url = 'https://transfer.kemsu.ru/api/v1/sign_up/student/';
+    const url = 'https://transfer.kemsu.ru/api/v1/sign_in/student/';
 
     const user = {
-        "first_name": "Default",
-        "middle_name": "Default",
-        "last_name": "Default",
-        "phone": "8-150-555-35-35",
-        "email": "qqqqqqdefault@mail.com",
-        "password": "qqqqqq123456"
+        "email": login,
+        "password": password
     };
 
     const options = {
@@ -55,90 +105,19 @@ async function getData2(){
         mode: "cors",
         headers: {
             "accept": "application/json",
-            "Content-Type": "application/json"
+            'Content-Type': 'application/json'
         },
         body: JSON.stringify(user)
     };
 
-    let answer = new CustomResp();
     
     const response = fetch(url, options)
                     .then((response) => {
-                        answer.setCode(response.status);
-                        return response.json()
+                        console.log(response.json())
                     })
-                    .then((data) => { 
-                        answer.setData(data);
-                    })
-
-                    .catch();
-
-    console.log(answer)
 
 }
 
-async function getData(){
-
-    const url = 'https://transfer.kemsu.ru/api/v1/sign_up/student/';
-
-    const user = {
-        "first_name": "Default",
-        "middle_name": "Default",
-        "last_name": "Default",
-        "phone": "8-150-555-35-35",
-        "email": "qqqqqqdefault@mail.com",
-        "password": "qqqqqq123456"
-    };
-
-    const options = {
-        method: 'POST',
-        mode: "cors",
-        headers: {
-            "accept": "application/json",
-            "Content-Type": "application/json"
-        },
-        body: JSON.stringify(user)
-    };
-
-    let answer = new CustomResp();
-    
-    const response = fetch(url, options)
-                    .then((response) => {
-                        answer.setCode(response.status);
-                        return response.json()
-                    })
-                    .then((data) => { 
-                        answer.setData(data);
-                    })
-
-                    .catch();
-
-    console.log(answer)
-
-}
-
-class CustomResp{
-    constructor(inData, inCode){
-        this.Data = inData;
-        this.Code = inCode;
-    }
-
-    setCode(inCode) {
-        this.Code = inCode;
-    }
-
-    setData(inData) {
-        if(typeof inData == "boolean"){
-            this.Data = "Пользователь успешно добавлен";
-            this.isBool = inData;
-        }
-        else {
-            this.Data = inData;
-            this.isBool = false;
-        }
-            
-    }
-}
 
 
 export default AuthMain

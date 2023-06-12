@@ -1,8 +1,13 @@
 import React from 'react'
 import styles from "./LendingOne.module.css"
+import {useDispatch, useSelector} from "react-redux";
+import { useNavigate } from 'react-router-dom';
+import links from '../../../services/links';
 
 
 const LendingOne = () => {
+    const dispatch = useDispatch();
+    const navigate = useNavigate();
   return (
     <div className={styles.Upper}>
         <div className={styles.Left}>
@@ -12,7 +17,7 @@ const LendingOne = () => {
             </div>
             <p className={styles.TextBlock}>Сервис даёт возможность найти свободное место на бюджет. 
                 <br />Не жди, начни планировать свое будущее уже сейчас!</p>
-            <button className={styles.Button} onClick={test}>Перевестись!</button>
+            <button className={styles.Button} onClick={ () => navigate(links.Places)}>Перевестись!</button>
         </div>
 
         <div className={styles.Right}>
@@ -23,10 +28,7 @@ const LendingOne = () => {
 }
 
 
-function test(){
-    value = React.useContext(UserContext)
-    console.log(value)
-}
+
 
 
 

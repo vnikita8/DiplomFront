@@ -1,6 +1,8 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
+import React, {useState, useEffect} from 'react'
+import { Link, useNavigate } from 'react-router-dom'
 import styles from './RegMain.module.css'
+import {useDispatch, useSelector} from "react-redux";
+import links from '../../../services/links';
 
 
 const RegMain = () => {
@@ -13,6 +15,13 @@ const RegMain = () => {
 }
 
 const Left = () => {
+    const navigate = useNavigate();
+    const dispatch = useDispatch();
+
+    const [login, setLogin] = useState("")
+    const [password1, setPassword1] = useState("")
+    const [password2, setPassword2] = useState("")
+
     return (
         <div className={styles.Left}>
             <div className={styles.HeaderLeft}>
@@ -26,10 +35,22 @@ const Left = () => {
                     <p>Начните пользоваться всеми преимуществами нашего сайта, создав аккаунт всего за 1 минуту.</p>
                 </div>
                 <form>
-                    <input placeholder='Почта'></input>
-                    <input placeholder='Пароль'></input>
-                    <input placeholder='Подтверждение пароля'></input>
-                    <Link to='/Reg/2'>Зарегистрироваться</Link>
+                    <input placeholder='Почта' type="text" value={login} onChange={ event => setLogin(event.target.value)} />
+                    <input placeholder='Пароль' type="text" value={password1} onChange={ event => setPassword1(event.target.value)} />
+                    <input placeholder='Подтверждение пароля' type="text" value={password2} onChange={ event => setPassword2(event.target.value)} />
+
+                    <button onClick={() => {
+                        if(password1 != password2 || login=="" || password1==""){
+                            alert("Неправильный логин или пароль");
+                            return;
+                        } else{
+                            let result = [];
+                            result.push(login);
+                            result.push(password1);
+                            dispatch({type:"SIGN_UP_ONE", sign_up: result});
+                            navigate(links.Reg2);
+                        }}}>Зарегистрироваться</button>
+
                 </form>
             </div>
         </div>

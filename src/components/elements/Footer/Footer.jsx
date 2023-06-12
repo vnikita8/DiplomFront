@@ -21,8 +21,8 @@ const Footer = () => {
           <p className={styles.BlockTitle}>Конакты</p>
           <hr></hr>
           <div>
-            <p>Тел.:</p>
-            <p>Vk: </p>
+            <p>Тел.: + 7 (3842) 58-38-85</p>
+            <a href='http://vk.com/digital_kemsu'>Vk: digital_kemsu</a>
           </div>
         </div>
     </div>
